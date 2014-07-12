@@ -15,9 +15,6 @@ def print_sentiment(scores, tweet_file):
         else:
             print 0
 
-def lines(fp):
-    print str(len(fp.readlines()))
-
 def read_sentiment(afinnfile):
     scores = {} # initialize an empty dictionary
     for line in afinnfile:
@@ -32,7 +29,6 @@ def main():
     tweet_file = open(sys.argv[2])
     scores = read_sentiment(sent_file)
     print_sentiment(scores, tweet_file)
-
 
 if __name__ == '__main__':
     main()
