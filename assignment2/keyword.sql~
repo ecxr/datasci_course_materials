@@ -1,0 +1,11 @@
+SELECT f1.docid, f1.count 
+FROM frequency f1, 
+     (SELECT 'q' AS docid, 'washington' AS term, 1 AS count 
+     UNION 
+     SELECT 'q' AS docid, 'taxes' AS term, 1 AS count 
+     UNION
+     SELECT 'q' AS docid, 'treasury' AS term, 1 AS count) 
+     freq2 
+WHERE f1.term = freq2.term 
+ORDER BY f1.count 
+DESC LIMIT 0,4;
